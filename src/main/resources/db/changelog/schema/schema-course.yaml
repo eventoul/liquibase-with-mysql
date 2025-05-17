@@ -57,4 +57,4 @@ databaseChangeLog:
                   value: 30
               - column:
                   name: duration
-                  value: 60
+                  value: 100
