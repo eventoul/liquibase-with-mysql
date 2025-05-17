@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/schema/schema-student.yaml
+  - include:
+      file: db/changelog/schema/schema-course.yaml

@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: eventoulPenta
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: course
+      changes:
+        - createTable:
+            tableName: course
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: mandatory
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: credits
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: duration
+                  type: INT
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: eventoulPenta
+      changes:
+        - insert:
+            tableName: course
+            columns:
+              - column:
+                  name: title
+                  value: "IT"
+              - column:
+                  name: mandatory
+                  value: 1
+              - column:
+                  name: credits
+                  value: 30
+              - column:
+                  name: duration
+                  value: 60
